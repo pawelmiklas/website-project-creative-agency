@@ -7,10 +7,18 @@ $fc-white: hsla(0, 0%, 100%, 100%);
 $fc-gray: hsla(60, 1%, 19.8%, 100%);
 
 // FONT FAMILY
+$ff-default: 'Lato', sans-serif;
 $ff-title: 'Norican', cursive;
+$ff-bold: 'Titillium Web', sans-serif;
 
 //BACKGROUND
 $bcg-white: hsla(0, 0%, 100%, 100%);
 
+//COLOR
+$c-orange: #fc9e20;
+$c-blue: #415299;
+
 //GRADIENT
 $vertical-gradient: linear-gradient(to right, #dd813d, #415299);
+$corner-gradient: linear-gradient(135deg, #dd813d, #415299);
+$corner-gradient-gray: linear-gradient(135deg, #e0e0e0, #fff);

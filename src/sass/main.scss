@@ -3,14 +3,13 @@
 \* ================================================== */
 
 @import 'variables/*.scss';
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Norican&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Norican&subset=latin-ext|Reem+Kufi|Lato:400,700,900|Titillium+Web:700,900');
 
 *{
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: $ff-default;
 }
 
 // HEADER
@@ -117,11 +116,11 @@ header{
 .cards{
 	width: 100%;
 	height: 27.5em;
+	margin-bottom: -10.5em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	bottom: -130px;
+	transform: translateY(-250px);
 	.container-cards{
 		display: flex;
 		flex-direction: row;
@@ -158,19 +157,256 @@ header{
 			font-size: 1rem;
 			margin-bottom: 1.3em;
 		}
-		input{
-			position: absolute;
-			bottom: 0;
-			width: 145px;
-			height: 40px;
-			border-radius: 2em;
-			border: none;
-			text-transform: uppercase;
-			color: $fc-white;
-			font-weight: 800;
-			font-size: 1rem;
-			background-image: $vertical-gradient;
-			cursor: pointer;
+	}
+}
+.btn{
+	position: absolute;
+	bottom: 0;
+	width: 145px;
+	height: 40px;
+	border-radius: 2em;
+	border: none;
+	text-transform: uppercase;
+	color: $fc-white;
+	font-weight: 800;
+	font-size: 1rem;
+	background-image: $vertical-gradient;
+	cursor: pointer;
+}
+
+//ABOUT US
+
+.about-us{
+	height: 720px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: orange;
+	&__block{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+	&__item{
+		width: 23.75em;
+		h1{
+			font-family: $ff-title;
+			color: $fc-gray;
+			font-size: 3.125rem;
+		}
+		p{
+			line-height: 1.7rem;
+			font-size: 1.125rem;
 		}
 	}
 }
+.btn--position{
+	position: static;
+	bottom: none;
+}
+.btn--white{
+	color: black;
+	background-image: none;
+	margin-top: 3em;
+}
+.big-letter{
+	font-size: 35rem;
+	font-family: 'Reem Kufi', sans-serif;
+}
+
+
+//PRICE
+.price{
+	width: 100%;
+	height: 790px;
+	display: flex;
+	flex-direction: row;
+	&__block:nth-child(1){
+		flex-grow: 1;
+		background-image: $corner-gradient;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center; 
+		.price__item{
+			display: flex;
+			background-color: $bcg-white;
+			width: 385px;
+			height: 590px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 0 3em;
+			h1{
+				font-family: $ff-title;
+				font-size: 3.125rem;
+			}
+			h2{
+				font-size: 1.25rem;
+				text-transform: capitalize;
+			}
+			.fixed--color{
+				color: $fc-gray;
+			}
+			h3{
+				font-size: 6.6875rem;
+				background-image: $corner-gradient;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				margin: 20px 0;
+			}
+			p{
+				margin-top: .7em;
+				line-height: 1.6rem;
+				text-align: center;
+				font-weight: 300;
+			}
+			small{
+				font-size: 4rem;
+			}
+		}
+	}
+	&__block:nth-child(2){
+		flex-grow: 2;
+		background-image: $corner-gradient-gray;
+		display: flex;
+		// justify-content: space-evenly;
+		align-items: center; 
+		flex-direction: row;
+		.price__item{
+			display: flex;
+			background-image: $corner-gradient;
+			width: 385px;
+			height: 590px;
+			justify-self: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: $fc-white;
+			h1{
+				font-size: 3.5rem;
+				text-transform: capitalize;
+				font-family: $ff-bold;
+				font-weight: 900;
+				letter-spacing: -2px;
+			}
+			h2{
+				font-weight: 400;
+				margin-bottom: 20px;
+			}
+			ul{
+				list-style: none;
+				li{
+					margin-bottom: 20px;
+				}
+			}
+			.icon--list{
+				margin-right: 15px;
+			}
+		}
+		.price__about{
+			display: flex;
+			flex-direction: column;
+			width: 490px;
+			margin-left: auto;
+			margin-right: auto;
+			h1{
+				font-size: 3rem;
+				font-family: $ff-title;
+				line-height: 3rem;
+				text-align: left;
+			}
+			p{
+				line-height: 1.7rem;
+				font-size: 1.125rem;
+			}
+		}
+	}
+}
+
+
+//SOCIAL MEDIA
+
+.social-media{
+	width: 100%;
+	height: 471px;
+	background-image: url(/images/social-media-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: -42px;
+	&__block{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 330px;
+		h1{
+			font-family: $ff-title;
+			font-size: 3.125rem;
+			color: $fc-white;
+		}
+	}
+	&__list{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 830px;
+	}
+	.list__circe{
+		border: 3px solid $fc-white;
+		width: 5em;
+		height: 5em;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.icon--white{
+			color: $fc-white;
+		}
+	}
+}
+
+// FOOTER
+ footer{
+	 width: 100%;
+	 height: 300px;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 .footer__block{
+		 display: flex;
+		 flex-direction: row;
+		 justify-content: space-around;
+		 align-items: center;
+	 }
+	 .footer__item{
+		 display: flex;
+		 justify-content: center;
+		 align-items: center;
+		 .color-icon{
+			 color: $c-orange;
+		 }
+		 .item__svg{
+			 padding: 0 2em;
+		 }
+	 }
+	 .item__description{
+		 color: $fc-gray;
+		 top: 0;
+		 h1{
+			 text-transform: uppercase;
+			 font-size: 1.0625rem;
+			 font-weight: bold;
+			 margin-bottom: .5em;
+		 }
+		 p{
+			 font-size: 1rem;
+			 font-weight: 400;
+		 }
+	 }
+ }
