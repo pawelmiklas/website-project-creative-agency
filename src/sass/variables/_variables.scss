@@ -13,6 +13,7 @@ $ff-bold: 'Titillium Web', sans-serif;
 
 //BACKGROUND
 $bcg-white: hsla(0, 0%, 100%, 100%);
+$bcg-gray: #d9d9d9;
 
 //COLOR
 $c-orange: #fc9e20;
@@ -21,4 +22,4 @@ $c-blue: #415299;
 //GRADIENT
 $vertical-gradient: linear-gradient(to right, #dd813d, #415299);
 $corner-gradient: linear-gradient(135deg, #dd813d, #415299);
-$corner-gradient-gray: linear-gradient(135deg, #e0e0e0, #fff);
+$corner-gradient-gray: linear-gradient(135deg, #d9d9d9, #fff);

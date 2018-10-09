@@ -215,6 +215,120 @@ header{
 	font-family: 'Reem Kufi', sans-serif;
 }
 
+// MEMBER PAGE
+
+.member-page{
+	width: 100%;
+	height: 730px;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 130px;
+	&__block:nth-child(1){
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		// background-color: red;
+		.member-page__item{
+			display: flex;
+			flex-direction: column;
+			padding: 0 50px 0 215px;
+			justify-content: flex-end;
+			align-items: center;
+			h1{
+				font-family: $ff-title;
+				font-size: 4rem;
+				text-transform: capitalize;
+				text-align: left;
+			}
+			h2{
+				text-align: left;
+				color: $fc-gray;
+				font-size: 1.375rem;
+				margin-bottom: 1em;
+				text-transform: capitalize;
+			}
+			p{
+				font-weight: 300;
+				line-height: 1.7em;
+				margin-bottom: 2em;
+			}
+			.member-page__progress-bar{
+				display: flex;
+				flex-direction: column;
+				height: 100px;
+				.pair{
+					display: flex;
+					justify-content: space-between;
+					line-height: 0px;
+					h2{
+						font-weight: bold;
+
+					}
+				}
+				h2{
+					margin-bottom: 5px;
+					font-weight: 400;
+				}
+				.progress-bar__item{
+					width: 480px;
+					height: 14px;
+					background-color: $bcg-gray;
+					border-radius: 1em;
+				}
+				.progress-bar--color{
+					width: 400px;
+					background-image: $vertical-gradient;
+				}
+			}
+		}
+	}
+	&__block:nth-child(2){
+		flex: 1.3;
+		display: flex;
+		flex-direction: row;
+		// background-color: gray;
+		img{
+			display: inline;
+		}
+		.member-page__item{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			// width: 420px;
+			background-image: $corner-gradient;
+			padding: 55px 45px;
+			color: $fc-white;
+			.item__header{
+				h2{
+					font-size: 1.3125rem;
+					margin-bottom: .4em;
+				}
+				p{
+					font-size: 1.125rem;
+					font-weight: 300;
+				}
+			}
+			.item__socials{
+				display: flex;
+				.item__circle{
+					width: 62px;
+					height: 62px;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: $bcg-white;
+					margin-right: 1em;
+					i{
+						color: $fc-gray;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 //PRICE
 .price{
