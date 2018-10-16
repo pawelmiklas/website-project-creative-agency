@@ -19,7 +19,7 @@ header {
 	height: 900px;
 
 	.header__background {
-		background-image: url(/images/banner.png);
+		background-image: url(../images/banner.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 50% 100%;
@@ -241,7 +241,7 @@ header {
 		h1 {
 			font-size: 42rem;
 			font-family: 'Reem Kufi', sans-serif;
-			background: url(/images/bcg-letter-a.png) no-repeat 230% 30%;
+			background: url(../images/bcg-letter-a.png) no-repeat 230% 30%;
 			-webkit-text-fill-color: transparent;
 			-webkit-background-clip: text;
 
@@ -755,7 +755,7 @@ header {
 .social-media {
 	width: 100%;
 	height: 471px;
-	background-image: url(/images/social-media-bg.png);
+	background-image: url(../images/social-media-bg.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 100%;
