@@ -240,12 +240,57 @@ header {
 	font-family: 'Reem Kufi', sans-serif;
 }
 
+// FEATURES
+
+.features{
+	width: 100%;
+	height: 900px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__block{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&__item{
+		padding: 7px;
+	}
+	&__description{
+		width: 725px;
+		height: 370px;
+		margin-bottom: -370px;
+		// z-index: 100;
+		transform: translateY(-550px);
+		background-color: $bcg-white;
+		border-radius: 10px;
+		padding: 25px;
+		text-align: center;
+		h1{
+			font-family: $ff-title;
+			font-size: 3.125rem;
+			text-transform: capitalize;
+		}
+		p{
+			line-height: 1.5em;
+			margin-top: 2em;
+			margin-bottom: 4em;
+			font-weight: 400;
+		}
+	}
+}
+
+
+
+
 // SERVICES
 
 .services{
 	width: 100%;
 	height: 935px;
 	// height: 635px;
+	margin-top: -200px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -254,7 +299,7 @@ header {
 		background-color: $bcg-gray-light;
 		display: flex;
 		justify-content: center;
-		height: 635px;
+		min-height: 635px;
 		z-index: 1;
 
 	}
@@ -293,10 +338,44 @@ header {
 		z-index: 100;
 		align-self: center;
 		display: flex;
-		transform: translateY(-530px);
+		transform: translate(170px, -530px);
 		width: 354px;
-		height: 475px;
-		background-color: red;
+		min-height: 475px;
+		background-image: $corner-gradient;
+		flex-wrap: wrap;
+		color: $fc-white;
+		border-radius: 1em;
+		padding: 20px;
+		margin-bottom: -730px;
+		.fixed-border{
+			border-bottom: 1px dotted $bcg-gray-light2;
+			border-left: 1px dotted $bcg-gray-light2;
+		}
+		.fixed-border:last-child{
+			border-bottom: 0;
+		}
+		.inset__item{
+			display: flex;
+			flex-wrap: wrap;
+			width: 50%;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			font-weight: 400;
+			text-transform: capitalize;
+			text-align: center;
+
+		
+			i{
+				margin-bottom: .3em;
+			}
+		}
+		.inset__item:nth-last-child(4){
+			border-bottom: 1px dotted $bcg-gray-light2;
+		}
+		.inset__item:nth-last-child(6){
+			border-bottom: 1px dotted $bcg-gray-light2;
+		}
 	}
 	.btn--services{
 		margin-top: 30px;
