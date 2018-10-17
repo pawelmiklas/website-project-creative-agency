@@ -12,6 +12,37 @@
 	font-family: $ff-default;
 }
 
+
+.hamburger-menu{
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.9);
+	position: absolute;
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	ul{
+		list-style-type: none;
+		li{
+			font-size: 2.3rem;
+			font-weight: 400;
+			text-transform: capitalize;
+			margin-bottom: .4em;
+			a{
+				text-decoration: none;
+				color: $fc-gray;
+				&:hover{
+					color: red;
+				}
+			}
+		}
+	}
+}
+.small-menu{
+	display: none;
+}
+
 // HEADER
 
 header {
@@ -55,7 +86,6 @@ header {
 	&__item {
 		ul {
 			display: flex;
-
 			li {
 				list-style: none;
 				margin-right: 20px;
@@ -67,6 +97,20 @@ header {
 					text-transform: uppercase;
 				}
 			}
+		}
+	}
+	.nav--display{
+		@media screen and (max-width:1050px){
+			display: none;
+		}
+	}
+	.hamburger-display{
+		display: none;
+		cursor: pointer;
+		z-index: 10000;
+		@media screen and (max-width:1050px){
+			// position: absolute;
+			display: block;
 		}
 	}
 }
@@ -85,7 +129,8 @@ header {
 
 	&__title {
 		color: $fc-white;
-		font-size: 4.875rem;
+		@include fp(font-size, 31, 78);
+		// font-size: 4.875rem;
 		text-align: center;
 
 		h1 {
@@ -95,16 +140,22 @@ header {
 
 	&__subtitle {
 		color: $fc-white;
-		font-size: 1.612rem;
+		@include fp(font-size, 15, 25);
 		text-align: center;
 		margin-bottom: 50px;
 	}
 
 	&__description {
 		color: $fc-white;
-		font-size: 1rem;
+		@include fp(font-size, 12, 16);
 		text-align: center;
 		width: 630px;
+		p{
+			@media screen and (max-width:800px){
+				margin: auto;
+				max-width: 450px;
+			}
+		}
 	}
 
 	&__btn {
@@ -133,24 +184,41 @@ header {
 	justify-content: center;
 	align-items: center;
 	transform: translateY(-250px);
-
+	@media screen and(max-width: 1230px) {
+		height: 88em;
+	}
 	.container-cards {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		@media screen and(max-width: 1230px) {
+			justify-content: center;
+			flex-direction: column;
+		}
 	}
 
 	&__item {
 		height: 410px;
-		width: 370px;
+		// SPRAWDZIĆ SZEROKOSC poniżej
+		width: 370px; 
 		border-radius: 1em;
 		background-color: $bcg-white;
 		overflow: hidden;
 		box-shadow: 0px 0px 50px 1px $bcg-gray-light2;
-
+		// position: relative;
+		// z-index: -100;
+		@media screen and(max-width: 1230px) {
+			// margin-bottom: 50px;
+			height: 410px;
+			margin-bottom: 50px;
+			width: 80%;
+		}
 		img {
 			width: 100%;
+			max-height: 222px;
+			object-fit: cover;
+			object-position: 50% 30%;
 		}
 	}
 
@@ -163,7 +231,7 @@ header {
 		padding: 0 4.7em;
 		text-align: center;
 		color: $fc-gray;
-
+		// z-index: 1000;
 		h1 {
 			margin-top: -15px;
 			font-size: 1.5628rem;
@@ -179,7 +247,9 @@ header {
 
 .btn {
 	position: absolute;
-	bottom: 0;
+	// top: 10;
+	transform: translateY(90px);
+	z-index: 1000;
 	width: 145px;
 	height: 40px;
 	border-radius: 2em;
@@ -233,12 +303,13 @@ header {
 	}
 
 	.big-letter {
-		transform: translateY(-750px);
+		transform: translateY(-700px);
 		margin-bottom: -750px;
-		z-index: 100;
+		z-index: 50;
 		text-align: center;
 		filter: drop-shadow( 0px 0px 20px $bcg-gray-light2 );
 		h1 {
+			line-height: 1.4em;
 			font-size: 42rem;
 			font-family: 'Reem Kufi', sans-serif;
 			background: url(../images/bcg-letter-a.png) no-repeat 230% 30%;
@@ -332,7 +403,7 @@ header {
 	}
 
 	&__item {
-		flex: 1.2;
+		flex: 1.35;
 		display: flex;
 		justify-content: flex-end;
 	}
@@ -343,7 +414,7 @@ header {
 	}
 
 	.item__description {
-		margin-right: 14%;
+		margin-right: 20%;
 		width: 500px;
 		display: flex;
 		flex-direction: column;
@@ -761,7 +832,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	margin-top: -42px;
-
+	margin-bottom: -42px;
 	&__block {
 		display: flex;
 		flex-direction: column;
@@ -802,36 +873,47 @@ header {
 // FOOTER
 footer {
 	width: 100%;
-	height: 300px;
+	min-height: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	margin: 50px 0;
 	.footer__block {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: center;
+		@media screen and (max-width:950px){
+			flex-direction: column;
+		}
 	}
 
 	.footer__item {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
+		min-width: 300px;
+		@media screen and (max-width:950px){
+			padding: 1em 0;
+			justify-content: space-between;
+		}
 		.color-icon {
 			color: $c-orange;
 		}
 
 		.item__svg {
 			padding: 0 2em;
+			@media screen and (max-width:950px){
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 
 	.item__description {
 		color: $fc-gray;
 		top: 0;
-
+		width: 150px;
 		h1 {
 			text-transform: uppercase;
 			font-size: 1.0625rem;
