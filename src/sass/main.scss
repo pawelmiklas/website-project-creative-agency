@@ -238,7 +238,7 @@ header {
     }
 
     p {
-      font-size: 1rem;
+      @include fp(font-size, 14, 16);
       margin-bottom: 1.3em;
     }
   }
@@ -735,17 +735,23 @@ header {
 //PRICE
 .price {
   width: 100%;
-  height: 790px;
+  min-height: 790px;
   display: flex;
   flex-direction: row;
-
+  flex-wrap: wrap;
   &__block:nth-child(1) {
-    flex-grow: 1;
+    flex-grow: 2;
     background-image: $corner-gradient;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    @media screen and(max-width:1377px) {
+      flex-grow: 1;
+    }
+    @media screen and(max-width:846px) {
+      justify-content: center;
+      width: 100%;
+    }
     .price__item {
       display: flex;
       background-color: $bcg-white;
@@ -755,7 +761,10 @@ header {
       justify-content: center;
       align-items: center;
       padding: 0 3em;
-
+      margin-left: 30px;
+      @media screen and(max-width:846px) {
+        margin-left: 0;
+      }
       h1 {
         font-family: $ff-title;
         font-size: 3.125rem;
@@ -792,13 +801,30 @@ header {
   }
 
   &__block:nth-child(2) {
-    flex-grow: 1.1;
-    background-image: $corner-gradient-gray;
+    // flex-grow: 1.1;
+    background: linear-gradient(
+          to bottom,
+          rgb(245, 245, 245) 0%,
+          rgba(255, 255, 255, 0) 100%
+        )
+        top,
+      linear-gradient(
+          to bottom,
+          rgb(245, 245, 245) 0%,
+          rgba(255, 255, 255, 0) 100%
+        )
+        bottom;
     display: flex;
     // justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-
+    @media screen and(max-width:1377px) {
+      flex-grow: 1;
+    }
+    @media screen and(max-width:846px) {
+      justify-content: center;
+      width: 100%;
+    }
     .price__item {
       display: flex;
       background-image: $corner-gradient;
@@ -810,6 +836,13 @@ header {
       align-items: center;
       color: $fc-white;
       margin-right: 70px;
+      @media screen and(max-width:1377px) {
+        margin-right: 30px;
+      }
+      @media screen and(max-width:846px) {
+        margin-right: 0;
+      }
+
       h1 {
         font-size: 3.5rem;
         text-transform: capitalize;
@@ -853,6 +886,47 @@ header {
       }
     }
   }
+  &__block:nth-child(3) {
+    flex-grow: 1.1;
+    min-height: 790px;
+    background: linear-gradient(
+          to bottom,
+          rgb(245, 245, 245) 0%,
+          rgba(255, 255, 255, 0) 100%
+        )
+        top,
+      linear-gradient(
+          to bottom,
+          rgb(245, 245, 245) 0%,
+          rgba(255, 255, 255, 0) 100%
+        )
+        bottom;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    @media screen and(max-width:1377px) {
+      height: 690px;
+      justify-content: center;
+      width: 100%;
+    }
+    .price__about {
+      display: flex;
+      flex-direction: column;
+      width: 490px;
+      padding: 0 40px;
+      h1 {
+        @include fp(font-size, 36, 48);
+        font-family: $ff-title;
+        line-height: 3rem;
+        text-align: left;
+      }
+
+      p {
+        line-height: 1.7rem;
+        @include fp(font-size, 16, 18);
+      }
+    }
+  }
 }
 
 //SOCIAL MEDIA
@@ -868,15 +942,11 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -42px;
-  margin-bottom: -42px;
   @media screen and(max-width: 850px) {
-	height: 650px;
-	margin-top: -62px;
+    height: 650px;
   }
   @media screen and(max-width: 550px) {
-	height: 950px;
-	margin-top: -83px;
+    height: 950px;
   }
   .container {
     @media screen and(max-width: 850px) {
@@ -952,7 +1022,7 @@ header {
 // FOOTER
 footer {
   width: 100%;
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
